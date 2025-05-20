@@ -1,6 +1,11 @@
 import { Email } from "../value-objets/email";
 
 describe("Email", () => {
+  it("should create a valid email", () => {
+    const email = Email.create("test@test.com");
+    expect(email.value).toBe("test@test.com");
+  });
+
   it("should throw error for empty email", () => {
     expect(() => {
       Email.create("");
@@ -18,11 +23,6 @@ describe("Email", () => {
     expect(() => {
       Email.create("invalid-format-email");
     }).toThrow("Invalid email format");
-  });
-
-  it("should create a valid email", () => {
-    const email = Email.create("test@test.com");
-    expect(email.value).toBe("test@test.com");
   });
 
   it("should compare two identical emails as true", () => {
