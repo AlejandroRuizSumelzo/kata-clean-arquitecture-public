@@ -33,4 +33,16 @@ export class User extends Entity<UserProps> {
       id ? id : new Date().getTime().toString()
     );
   }
+
+  get name(): UserName {
+    return this._props.name;
+  }
+
+  get email(): Email {
+    return this._props.email;
+  }
+
+  get password(): Password {
+    return this._props.password;
+  }
 }
