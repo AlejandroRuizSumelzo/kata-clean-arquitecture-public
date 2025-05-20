@@ -22,4 +22,8 @@ export class Email extends ValueObject<EmailProps> {
 
     return new Email({ value: email.toLowerCase() });
   }
+
+  get value(): string {
+    return this._props.value;
+  }
 }
