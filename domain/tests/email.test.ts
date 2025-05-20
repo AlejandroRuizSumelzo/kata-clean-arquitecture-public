@@ -25,9 +25,15 @@ describe("Email", () => {
     expect(email.value).toBe("test@test.com");
   });
 
-  it("should compare two identical emails", () => {
+  it("should compare two identical emails as true", () => {
     const email1 = Email.create("test@test.com");
     const email2 = Email.create("test@test.com");
     expect(email1.equals(email2)).toBe(true);
+  });
+
+  it("should compare two different emails as false", () => {
+    const email1 = Email.create("test@test.com");
+    const email2 = Email.create("example@test.com");
+    expect(email1.equals(email2)).toBe(false);
   });
 });
