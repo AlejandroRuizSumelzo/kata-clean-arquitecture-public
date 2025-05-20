@@ -1,4 +1,4 @@
-import { User } from "../entities/user";
+import { User } from "../user";
 
 describe("User", () => {
   it("should create a valid user with all required fields", () => {

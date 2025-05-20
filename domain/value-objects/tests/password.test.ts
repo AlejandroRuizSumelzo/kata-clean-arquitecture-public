@@ -1,4 +1,4 @@
-import { Password } from "../value-objects/password";
+import { Password } from "../password";
 
 describe("Password value object", () => {
   it("should create valid password if it meets the requirements", () => {
