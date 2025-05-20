@@ -28,4 +28,7 @@ export class Password extends ValueObject<PasswordProps> {
 
     return new Password({ value: password });
   }
+    get value(): string {
+    return this._props.value;
+  }
 }
