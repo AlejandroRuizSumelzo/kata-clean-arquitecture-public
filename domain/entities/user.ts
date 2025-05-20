@@ -10,5 +10,27 @@ interface UserProps {
 }
 
 export class User extends Entity<UserProps> {
-  private constructor() {}
+  private constructor(props: UserProps, id: string) {
+    super(props, id);
+  }
+
+  public static create(
+    name: string,
+    email: string,
+    password: string,
+    id?: string
+  ): User {
+    const userName = UserName.create(name);
+    const userEmail = Email.create(email);
+    const userPassword = Password.create(password);
+
+    return new User(
+      {
+        name: userName,
+        email: userEmail,
+        password: userPassword,
+      },
+      id ? id : new Date().getTime().toString()
+    );
+  }
 }

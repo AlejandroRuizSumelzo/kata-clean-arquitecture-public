@@ -9,7 +9,7 @@ export class Password extends ValueObject<PasswordProps> {
     super(props);
   }
 
-  public create(password: string): Password {
+  public static create(password: string): Password {
     if (!password || password.trim().length === 0) {
       throw new Error("Password cannot be empty");
     }

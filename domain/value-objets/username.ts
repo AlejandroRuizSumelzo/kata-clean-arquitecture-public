@@ -9,7 +9,7 @@ export class UserName extends ValueObject<UserNameProps> {
     super(props);
   }
 
-  public create(name: string): UserName {
+  public static create(name: string): UserName {
     return new UserName({ value: name });
   }
 }

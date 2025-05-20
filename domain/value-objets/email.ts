@@ -9,7 +9,7 @@ export class Email extends ValueObject<EmailProps> {
     super(props);
   }
 
-  public create(email: string): Email {
+  public static create(email: string): Email {
     if (!email || email.trim().length === 0) {
       throw new Error("Email cannot be empty");
     }
