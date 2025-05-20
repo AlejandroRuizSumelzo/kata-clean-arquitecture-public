@@ -1,7 +1,7 @@
 import { Entity } from "../core/entity";
-import { Email } from "../value-objets/email";
-import { Password } from "../value-objets/password";
-import { UserName } from "../value-objets/username";
+import { Email } from "../value-objects/email";
+import { UserName } from "../value-objects/username";
+import { Password } from "../value-objects/password";
 
 interface UserProps {
   name: UserName;

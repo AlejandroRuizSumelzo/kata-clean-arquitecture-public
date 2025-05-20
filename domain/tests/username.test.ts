@@ -1,4 +1,4 @@
-import { UserName } from "../value-objets/username";
+import { UserName } from "../value-objects/username";
 
 describe("UserName", () => {
   it("should create a valid username", () => {
