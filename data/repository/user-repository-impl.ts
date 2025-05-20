@@ -1,9 +1,14 @@
 import { User } from "../../domain/entities/user";
 import { UserRepository } from "../../domain/repository/user-repository";
 import { Email } from "../../domain/value-objects/email";
+import { UserMock } from "../mocks/user-mock";
 
 export class UserRepositoryImpl implements UserRepository {
   private users: User[] = [];
+
+  constructor() {
+    this.users = UserMock.getUsers();
+  }
 
   async getUsers(): Promise<User[]> {
     return this.users;
