@@ -11,7 +11,7 @@ it("should create valid password if it meets the requirements", () => {
   it("should throw error for less than 8 letters", () => {
     expect(() => {
       Password.create("hola");
-    }).toThrow("Password cannot be less than 8 letters");
+    }).toThrow("Password must be at least 8 characters long");
   });
 
     it("should throw error if password is empty", () => {
