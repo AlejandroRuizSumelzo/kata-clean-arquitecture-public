@@ -24,4 +24,10 @@ describe("Email", () => {
     const email = Email.create("test@test.com");
     expect(email.value).toBe("test@test.com");
   });
+
+  it("should compare two identical emails", () => {
+    const email1 = Email.create("test@test.com");
+    const email2 = Email.create("test@test.com");
+    expect(email1.equals(email2)).toBe(true);
+  });
 });
