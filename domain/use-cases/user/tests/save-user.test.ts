@@ -15,11 +15,7 @@ describe("SaveUserUseCase", () => {
   });
 
   it("should save successfully a new valid user", async () => {
-    const testUser = User.create(
-      "John Doe",
-      "john@example.com",
-      "Password123!"
-    );
+    const testUser = User.create("John Doe", "john@example.com", "Password123");
     (mockUserRepository.getUserByEmail as jest.Mock).mockResolvedValue(null);
     (mockUserRepository.saveUser as jest.Mock).mockResolvedValue(undefined);
 
