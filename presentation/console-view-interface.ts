@@ -1,9 +1,7 @@
-/*Cada una de las lineas que aparece en la consola*/
-
 import { User } from "../domain/entities/user";
-import { ViewInterface } from "./presenter";
+import { ConsoleViewInterface } from "./console-presenter";
 
-export class ConsoleViewInterface implements ViewInterface {
+export class ConsoleViewInterfaceImpl implements ConsoleViewInterface {
   showUsers(users: User[]): void {
     console.log("Usuarios:");
     users.map((user) => {

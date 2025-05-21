@@ -1,16 +1,15 @@
-import { ConsoleViewInterface } from "./presentation/console-view-interface";
-import { Presenter } from "./presentation/presenter";
+import { ConsoleViewInterfaceImpl } from "./presentation/console-view-interface";
+import { ConsolePresenter } from "./presentation/console-presenter";
 import { serviceLocator } from "./service-locator";
 
 import readline from "readline";
 
 class CLIApp {
-  private presenter: Presenter;
+  private consolePresenter: ConsolePresenter;
   private rl: readline.Interface;
 
   constructor() {
-    const view = new ConsoleViewInterface();
-    this.presenter = serviceLocator(view);
+    this.consolePresenter = serviceLocator();
 
     this.rl = readline.createInterface({
       input: process.stdin,
@@ -44,13 +43,13 @@ class CLIApp {
 
   async listUsers(): Promise<void> {
     console.log("\nObteniendo usuarios...");
-    await this.presenter.getUsers();
+    await this.consolePresenter.getUsers();
     this.showMenu();
   }
 
   async createUser(): Promise<void> {
     console.log("\nCreando nuevo usuario:");
-    await this.presenter.saveUser();
+    await this.consolePresenter.saveUser();
     this.showMenu();
   }
 

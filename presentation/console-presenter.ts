@@ -1,11 +1,8 @@
-/* Tiene que usar la interfaz de la vista para mostrar el mensaje*/
-
 import { User } from "../domain/entities/user";
 import { GetUsersUserCase } from "../domain/use-cases/user/get-users-use-case";
 import { SaveUserUseCase } from "../domain/use-cases/user/save-user-use-case";
-import { Email } from "../domain/value-objects/email";
 
-export interface ViewInterface {
+export interface ConsoleViewInterface {
   showMessage(message: string): void;
   showError(error: string): void;
   showUsers(users: User[]): void;
@@ -14,13 +11,13 @@ export interface ViewInterface {
   requestUsername(): Promise<string>;
 }
 
-export class Presenter {
-  private view: ViewInterface;
+export class ConsolePresenter {
+  private view: ConsoleViewInterface;
   private getUsersUseCase: GetUsersUserCase;
   private saveUserUseCase: SaveUserUseCase;
 
   constructor(
-    view: ViewInterface,
+    view: ConsoleViewInterface,
     getUsersUseCase: GetUsersUserCase,
     saveUserUseCase: SaveUserUseCase
   ) {
